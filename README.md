@@ -35,9 +35,9 @@ $ 10.3.0
 
 * binaries
 ```
-git clone https://github.com/functionx/fx-core.git
-cd fx-core
-make go.sum
+$ git clone https://github.com/functionx/fx-core.git
+$ cd fx-core
+$ make go.sum
 ```
 
 clone the repo and cd into fx-core to make go.sum.
@@ -45,21 +45,21 @@ clone the repo and cd into fx-core to make go.sum.
 swith to testnet env to intall:
 
 ```
-git checkout testnet-evm
-make go.sum
-make install-testnet
+$ git checkout testnet-evm
+$ make go.sum
+$ make install-testnet
 ```
 
 * check network
 ```
-fxcored network
+$ fxcored network
 ```
 
 ![network](https://github.com/liq19ch/f-x-/blob/main/image/network.jpg)
 
 * check version
 ```
-fxcored version
+$ fxcored version
 ```
 
 ![fxcored-version](https://github.com/liq19ch/f-x-/blob/main/image/version.jpg)
@@ -68,14 +68,14 @@ fxcored version
 ## Setup full node
 * init
 ```
-fxcored init fx-zakir
+$ fxcored init fx-zakir
 ```
 
 * overwrite the toml files line by line
 ```
-wget https://raw.githubusercontent.com/functionx/fx-core/testnet-evm/public/testnet/genesis.json -O ~/.fxcore/config/genesis.json
-wget https://raw.githubusercontent.com/functionx/fx-core/testnet-evm/public/testnet/config.toml -O ~/.fxcore/config/config.toml
-wget https://raw.githubusercontent.com/functionx/fx-core/testnet-evm/public/testnet/app.toml -O ~/.fxcore/config/app.toml
+$ wget https://raw.githubusercontent.com/functionx/fx-core/testnet-evm/public/testnet/genesis.json -O ~/.fxcore/config/genesis.json
+$ wget https://raw.githubusercontent.com/functionx/fx-core/testnet-evm/public/testnet/config.toml -O ~/.fxcore/config/config.toml
+$ wget https://raw.githubusercontent.com/functionx/fx-core/testnet-evm/public/testnet/app.toml -O ~/.fxcore/config/app.toml
 ```
 
 * snapshot
@@ -84,24 +84,24 @@ This is a large zip file which may take whole day to be downloaded. Make sure th
 If the process stopped, just ctrl+c to stop it and rerun the same command line below. wget is smart enought to download it continuously. 
 
 ```
-wget -c https://fx-testnet.s3.amazonaws.com/fxcore-snapshot-testnet-2022-03-28.tar.gz
+$ wget -c https://fx-testnet.s3.amazonaws.com/fxcore-snapshot-testnet-2022-03-28.tar.gz
 ```
 
 unpack it:
 
 ```
-tar -xzvf fxcore-snapshot-testnet-2022-03-28.tar.gz -C ~/.fxcore/
+$ tar -xzvf fxcore-snapshot-testnet-2022-03-28.tar.gz -C ~/.fxcore/
 ```
 
 start a node:
 ```
-nohup fxcored start 2>&1 > fxcore.log &
+$ nohup fxcored start 2>&1 > fxcore.log &
 ```
 
 ## Create a validator
 * a new validator name
 ```
-fxcored keys add <_name>
+$ fxcored keys add <_name>
 ```
 
 ** notice:! a full node can only be bound to one validator.
@@ -109,7 +109,7 @@ fxcored keys add <_name>
 use the command to ensure it's all sync:
 ensure the catching up: false, and the height equals to the current height.
 ```
-fxcored status
+$ fxcored status
 ```
 ![status](https://github.com/liq19ch/f-x-/blob/main/image/status.jpg)
 
@@ -122,14 +122,14 @@ https://dhobyghaut-faucet.functionx.io/
 * ensure the path
 results should be the same.
 ```
-curl -s 127.0.0.1:26657/status | jq '.result.validator_info.pub_key'
-cat .fxcore/config/priv_validator_key.json| jq .pub_key
+$ curl -s 127.0.0.1:26657/status | jq '.result.validator_info.pub_key'
+$ cat .fxcore/config/priv_validator_key.json| jq .pub_key
 ```
 
 the last second should be the same with the second command:
 ```
-fxcored keys parse $(cat .fxcore/config/priv_validator_key.json| jq -r '.address')
-fxcored tendermint show-address
+$ fxcored keys parse $(cat .fxcore/config/priv_validator_key.json| jq -r '.address')
+$ fxcored tendermint show-address
 ```
 
 
@@ -140,7 +140,7 @@ fxcored tendermint show-address
 the amount should be over your min-self-delegation, otherwise it will fail.
 
 ```
-fxcored tx staking create-validator \
+$ fxcored tx staking create-validator \
   --chain-id=dhobyghaut \
   --gas="auto" \
   --gas-adjustment=1.2 \
