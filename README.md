@@ -6,7 +6,7 @@ A doc for each step to set up a node validator with f(x).
 * git bash (or ubuntu)
 
 ## Setup preparation
-*gcc & make:
+* gcc & make:
 
 download tdm64-gcc-10.3.0-2 from https://jmeubank.github.io/tdm-gcc/articles/2021-05/10.3.0-release
 
@@ -20,7 +20,7 @@ Have the version 10.3.0 for gcc & 4.3 for make
 ![gcc-version](https://github.com/liq19ch/f-x-/blob/main/image/gcc.jpg)
 ![make-version](https://github.com/liq19ch/f-x-/blob/main/image/make.jpg)
 
-*go:
+* go:
 ```
 $ wget https://dl.google.com/go/go1.17.7.linux-amd64.tar.gz 
 $ mkdir -p $HOME/go/bin
@@ -29,11 +29,11 @@ $ echo "export PATH=$PATH:$(go env GOPATH)/bin" >> ~/.profile
 $ 10.3.0
 ```
 
-**notice:! if you are using ubuntu, this will not work. Since ubuntu only support you with the go version up to 1.13, you'll need to find another way to set up the path with this.
-**notice:! a windows user may need to download wget command first.
+** notice:! if you are using ubuntu, this will not work. Since ubuntu only support you with the go version up to 1.13, you'll need to find another way to set up the path with this.
+** notice:! a windows user may need to download wget command first.
 
 
-*binaries
+* binaries
 ```
 git clone https://github.com/functionx/fx-core.git
 cd fx-core
@@ -50,14 +50,14 @@ make go.sum
 make install-testnet
 ```
 
-*check network
+* check network
 ```
 fxcored network
 ```
 
 ![network](https://github.com/liq19ch/f-x-/blob/main/image/network.jpg)
 
-*check version
+* check version
 ```
 fxcored version
 ```
@@ -66,19 +66,19 @@ fxcored version
 
 
 ## Setup full node
-*init
+* init
 ```
 fxcored init fx-zakir
 ```
 
-*overwrite the toml files line by line
+* overwrite the toml files line by line
 ```
 wget https://raw.githubusercontent.com/functionx/fx-core/testnet-evm/public/testnet/genesis.json -O ~/.fxcore/config/genesis.json
 wget https://raw.githubusercontent.com/functionx/fx-core/testnet-evm/public/testnet/config.toml -O ~/.fxcore/config/config.toml
 wget https://raw.githubusercontent.com/functionx/fx-core/testnet-evm/public/testnet/app.toml -O ~/.fxcore/config/app.toml
 ```
 
-*snapshot
+* snapshot
 snapshot will be performed every Monday morning at 2:00 am UTC. So the date is needed to be changed to the Monday you are going to download it.
 This is a large zip file which may take whole day to be downloaded. Make sure the network is stable and check the download process randomly.
 If the process stopped, just ctrl+c to stop it and rerun the same command line below. wget is smart enought to download it continuously. 
@@ -99,12 +99,12 @@ nohup fxcored start 2>&1 > fxcore.log &
 ```
 
 ## Create a validator
-*a new validator name
+* a new validator name
 ```
 fxcored keys add <_name>
 ```
 
-**notice:! a full node can only be bound to one validator.
+** notice:! a full node can only be bound to one validator.
 
 use the command to ensure it's all sync:
 ensure the catching up: false, and the height equals to the current height.
@@ -113,13 +113,13 @@ fxcored status
 ```
 ![status](https://github.com/liq19ch/f-x-/blob/main/image/status.jpg)
 
-*take some FX from faucet
+* take some FX from faucet
 choose the first one when you are trying to create a validator in testnet.
 https://dhobyghaut-faucet.functionx.io/
 
 ![faucet](https://github.com/liq19ch/f-x-/blob/main/image/faucet.jpg)
 
-*ensure the path
+* ensure the path
 results should be the same.
 ```
 curl -s 127.0.0.1:26657/status | jq '.result.validator_info.pub_key'
@@ -133,10 +133,10 @@ fxcored tendermint show-address
 ```
 
 
-**notice:! a windows users may need to download jq command.
+** notice:! a windows users may need to download jq command.
 
 
-*setup the validator with a transaction
+* setup the validator with a transaction
 the amount should be over your min-self-delegation, otherwise it will fail.
 
 ```
@@ -157,7 +157,7 @@ fxcored tx staking create-validator \
   --details="To infinity and beyond!" 
   ```
   
-  *search yours with explorer
+  * search yours with explorer
   ensure it's successful.
   https://dhobyghaut-explorer.functionx.io/
   
