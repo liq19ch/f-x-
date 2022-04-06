@@ -29,8 +29,8 @@ $ echo "export PATH=$PATH:$(go env GOPATH)/bin" >> ~/.profile
 $ 10.3.0
 ```
 
-** notice:! if you are using ubuntu, this will not work. Since ubuntu only support you with the go version up to 1.13, you'll need to find another way to set up the path with this. **
-** notice:! a windows user may need to download wget command first. **
+**notice:! if you are using ubuntu, this will not work. Since ubuntu only support you with the go version up to 1.13, you'll need to find another way to set up the path with this.**
+**notice:! a windows user may need to download wget command first.**
 
 
 * binaries
@@ -133,7 +133,7 @@ fxcored tendermint show-address
 ```
 
 
-** notice:! a windows users may need to download jq command. **
+**notice:! a windows users may need to download jq command.**
 
 
 * setup the validator with a transaction
