@@ -16,6 +16,7 @@ Run:
 $ choco install make
 ```
 Have the version 10.3.0 for gcc & 4.3 for make
+
 ![gcc-version](https://github.com/liq19ch/f-x-/blob/main/image/gcc.jpg)
 ![make-version](https://github.com/liq19ch/f-x-/blob/main/image/make.jpg)
 
