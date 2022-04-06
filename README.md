@@ -16,8 +16,8 @@ Run:
 $ choco install make
 ```
 Have the version 10.3.0 for gcc & 4.3 for make
-![gcc-version]()
-![make-version]()
+![gcc-version](https://github.com/liq19ch/f-x-/blob/main/image/gcc.jpg)
+![make-version](https://github.com/liq19ch/f-x-/blob/main/image/make.jpg)
 
 *go:
 ```
@@ -54,14 +54,14 @@ make install-testnet
 fxcored network
 ```
 
-![network]()
+![network](https://github.com/liq19ch/f-x-/blob/main/image/network.jpg)
 
 *check version
 ```
 fxcored version
 ```
 
-![fxcored-version]()
+![fxcored-version](https://github.com/liq19ch/f-x-/blob/main/image/version.jpg)
 
 
 ## Setup full node
@@ -106,16 +106,17 @@ fxcored keys add <_name>
 **notice:! a full node can only be bound to one validator.
 
 use the command to ensure it's all sync:
+ensure the catching up: false, and the height equals to the current height.
 ```
 fxcored status
 ```
-![status]()
+![status](https://github.com/liq19ch/f-x-/blob/main/image/status.jpg)
 
 *take some FX from faucet
 choose the first one when you are trying to create a validator in testnet.
 https://dhobyghaut-faucet.functionx.io/
 
-![faucet]()
+![faucet](https://github.com/liq19ch/f-x-/blob/main/image/faucet.jpg)
 
 *ensure the path
 results should be the same.
@@ -158,6 +159,8 @@ fxcored tx staking create-validator \
   *search yours with explorer
   ensure it's successful.
   https://dhobyghaut-explorer.functionx.io/
+  
+  ![validator](https://github.com/liq19ch/f-x-/blob/main/image/validator.jpg)
   
 
 my validator creation:
