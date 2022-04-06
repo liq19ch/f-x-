@@ -133,7 +133,7 @@ fxcored tendermint show-address
 ```
 
 
-**notice:! a windows users may need to download jq command.**
+**notice:! a windows user may need to download jq command.**
 
 
 * setup the validator with a transaction
