@@ -30,6 +30,7 @@ $ 10.3.0
 ```
 
 **notice:! if you are using ubuntu, this will not work. Since ubuntu only support you with the go version up to 1.13, you'll need to find another way to set up the path with this.**
+
 **notice:! a windows user may need to download wget command first.**
 
 
@@ -66,6 +67,7 @@ $ fxcored version
 
 
 ## Setup full node
+
 * init
 ```
 $ fxcored init fx-zakir
@@ -79,6 +81,7 @@ $ wget https://raw.githubusercontent.com/functionx/fx-core/testnet-evm/public/te
 ```
 
 * snapshot
+
 snapshot will be performed every Monday morning at 2:00 am UTC. So the date is needed to be changed to the Monday you are going to download it.
 This is a large zip file which may take whole day to be downloaded. Make sure the network is stable and check the download process randomly.
 If the process stopped, just ctrl+c to stop it and rerun the same command line below. wget is smart enought to download it continuously. 
@@ -99,12 +102,13 @@ $ nohup fxcored start 2>&1 > fxcore.log &
 ```
 
 ## Create a validator
+
 * a new validator name
 ```
 $ fxcored keys add <_name>
 ```
 
-** notice:! a full node can only be bound to one validator.
+**notice:! a full node can only be bound to one validator.**
 
 use the command to ensure it's all sync:
 ensure the catching up: false, and the height equals to the current height.
