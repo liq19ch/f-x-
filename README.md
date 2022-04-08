@@ -83,7 +83,9 @@ $ wget https://raw.githubusercontent.com/functionx/fx-core/testnet-evm/public/te
 * snapshot
 
 snapshot will be performed every Monday morning at 2:00 am UTC. So the date is needed to be changed to the Monday you are going to download it.
+
 This is a large zip file which may take whole day to be downloaded. Make sure the network is stable and check the download process randomly.
+
 If the process stopped, just ctrl+c to stop it and rerun the same command line below. wget is smart enought to download it continuously. 
 
 ```
